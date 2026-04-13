@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="قطايف - دليلك الإسلامي الشامل. مواقيت الصلاة، القرآن الكريم، الأذكار، الأحاديث والفتاوى">
+    <meta name="theme-color" content="#046A38">
+    <title>قطايف | دليلك للتقرب إلى الله</title>
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/img/icon-192.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- SEO & Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="قطايف | دليلك للتقرب إلى الله">
+    <meta property="og:description" content="تطبيق إسلامي متكامل: مواقيت صلاة، قرآن، أذكار، وقصص يومية.">
+    <meta property="og:image" content="assets/img/icon-512.png">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2 class="logo"><i class="fa-solid fa-moon"></i> قطايف</h2>
+            <button class="close-sidebar" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <nav class="sidebar-links">
+            <a href="#home" class="nav-link active" data-target="home"><i class="fa-solid fa-house"></i> الرئيسية</a>
+            <a href="#quran" class="nav-link" data-target="quran"><i class="fa-solid fa-book-quran"></i> القرآن الكريم</a>
+            <a href="#prayer" class="nav-link" data-target="prayer"><i class="fa-solid fa-clock"></i> مواقيت الصلاة</a>
+            <a href="#azkar" class="nav-link" data-target="azkar"><i class="fa-solid fa-hands-praying"></i> الأذكار</a>
+            <a href="#asma" class="nav-link" data-target="asma"><i class="fa-solid fa-star-and-crescent"></i> أسماء الله الحسنى</a>
+            <a href="#hadith" class="nav-link" data-target="hadith"><i class="fa-solid fa-scroll"></i> الأحاديث</a>
+            <a href="#fatawa" class="nav-link" data-target="fatawa"><i class="fa-solid fa-scale-balanced"></i> الفتاوى</a>
+            <a href="#tasbeeh" class="nav-link" data-target="tasbeeh"><i class="fa-solid fa-circle-dot"></i> السُبحة</a>
+            <a href="#stories" class="nav-link" data-target="stories"><i class="fa-solid fa-book-open-reader"></i> قصة اليوم</a>
+            <a href="#dashboard" class="nav-link" data-target="dashboard"><i class="fa-solid fa-chart-line"></i> إنجازاتي</a>
+        </nav>
+    </aside>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <h1 class="logo"><i class="fa-solid fa-moon"></i> قطايف</h1>
+            
+            <div class="nav-right-side">
+                <div class="nav-extra-controls">
+                    <button id="btnDecreaseFont" class="icon-btn tool-tip" title="تصغير الخط">A-</button>
+                    <button id="btnIncreaseFont" class="icon-btn tool-tip" title="تكبير الخط">A+</button>
+                    <button id="btnThemeToggle" class="icon-btn tool-tip" title="الوضع الداكن"><i class="fa-solid fa-moon"></i></button>
+                    <button id="btnLogin" class="btn secondary-btn login-btn-header"><i class="fa-solid fa-user"></i> دخول</button>
+                </div>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        
+        <!-- Home Section -->
+        <section id="home" class="page-section active-section" style="padding: 0;">
+            <!-- Hero Section -->
+            <!-- Hijri Date & Prayer Countdown Bar -->
+            <div class="hijri-bar">
+                <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                    <div id="hijriDate" class="hijri-date-display"><i class="fa-solid fa-calendar-days"></i> جاري التحميل...</div>
+                    <div id="prayerCountdown" class="prayer-countdown-display"><i class="fa-solid fa-bell"></i> الصلاة القادمة: جاري الحساب...</div>
+                </div>
+            </div>
+
+            <div class="landing-hero">
+                <div class="container hero-content">
+                    <div class="hero-text">
+                        <span class="badge">روحانية متكاملة</span>
+                        <h2>دليل المسلم الشامل<br>في مكان واحد</h2>
+                        <p>موقع قطايف يوفر لك تجربة إيمانية متكاملة صُممت خصيصاً لترافقك في يومك. تلاوات خاشعة، مواقيت دقيقة، أذكار ميسرة، ومكتبة إسلامية غنية بين يديك.</p>
+                        <div class="hero-actions">
+                            <button onclick="navigateTo('quran')" class="btn primary-btn btn-large"><i class="fa-solid fa-book-open"></i> اقرأ واستمع للقرآن</button>
+                            <button onclick="navigateTo('azkar')" class="btn secondary-btn btn-large"><i class="fa-solid fa-hands-praying"></i> أذكار اليوم</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-bg-pattern"></div>
+            </div>
+
+            <!-- Feature 5: Daily Interactive Question (Now First) -->
+            <div class="landing-feature alternate-bg" id="daily-question-section">
+                <div class="container feature-row">
+                    <div class="feature-text">
+                        <span class="feature-icon"><i class="fa-solid fa-circle-question"></i></span>
+                        <h3>سؤال اليوم التفاعلي</h3>
+                        <p>اختبر معلوماتك الدينية يومياً بسؤال تفاعلي جديد يساعدك على استرجاع المعرفة واكتساب معلومات قيمة لزيادة رصيدك من الثقافة الإسلامية.</p>
+                        <h4 style="color:var(--primary-color); margin-bottom: 15px; font-size: 1.3rem;" id="dailyQuestionText">جاري تحميل السؤال...</h4>
+                        <div class="quiz-options" id="dailyQuestionOptions" style="display:flex; flex-direction:column; gap:10px;">
+                            <!-- Options injected via JS -->
+                        </div>
+                        <div id="quizFeedback" class="quiz-feedback" style="display:none; margin-top:15px; padding:15px; border-radius:5px; font-weight:bold; font-size: 1.1rem;"></div>
+                    </div>
+                    <div class="feature-visual image-visual" style="background-image: url('https://picsum.photos/seed/islamic_art/800/600'); background-size: cover;">
+                        <div class="visual-overlay-card" style="background: rgba(4, 106, 56, 0.9); color: white;">
+                            <i class="fa-solid fa-lightbulb" style="font-size: 2rem; color:var(--secondary-color); margin-bottom:10px;"></i>
+                            <p style="font-family:'Cairo'; font-size:1.2rem; font-weight:bold;">"مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 1: Prayer & Qibla (Dynamic Daily Summary) -->
+            <div class="landing-feature">
+                <div class="container feature-row reverse">
+                    <div class="feature-text">
+                        <span class="feature-icon"><i class="fa-solid fa-clock"></i></span>
+                        <h3>مواقيت الصلاة أينما كنت</h3>
+                        <p>احصل على مواقيت الصلاة بدقة متناهية بناءً على موقعك الجغرافي. كما يوفر الموقع بوصلة ذكية لتحديد اتجاه القبلة بكل سهولة ويقين.</p>
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-check"></i> مواقيت دقيقة محدثة يومياً</li>
+                            <li><i class="fa-solid fa-check"></i> تحديد الموقع تلقائياً</li>
+                            <li><i class="fa-solid fa-check"></i> بوصلة القبلة التفاعلية</li>
+                        </ul>
+                        <button onclick="navigateTo('prayer')" class="feature-link">عرض المواقيت والقبلة <i class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                    <div class="feature-visual box-shadowed">
+                        <h4 style="text-align:center; color:var(--primary-color); margin-bottom:15px; font-family:'Cairo';">مواقيت اليوم (القاهرة)</h4>
+                        <div id="homePrayerGrid" class="home-mini-grid">
+                            جاري التحميل...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 2: Quran -->
+            <div class="landing-feature alternate-bg">
+                <div class="container feature-row">
+                    <div class="feature-text">
+                        <span class="feature-icon"><i class="fa-solid fa-book-quran"></i></span>
+                        <h3>القرآن الكريم تلاوة واستماع</h3>
+                        <p>عيش مع كلام الله. قراءة سلسة ومريحة للعين مع إمكانية البحث في السور، مع توفير تلاوات صوتية لمجموعة من أشهر وأعذب القراء.</p>
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-check"></i> تصميم قراءة مريح (Dark/Light Modes قريباً)</li>
+                            <li><i class="fa-solid fa-check"></i> مزامنة الصوت مع تظليل الآيات</li>
+                            <li><i class="fa-solid fa-check"></i> باقة من أشهر القراء</li>
+                        </ul>
+                        <button onclick="navigateTo('quran')" class="feature-link">تصفح المصحف المرتل <i class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                    <div class="feature-visual image-visual quran-visual-bg">
+                        <div class="visual-overlay-card">
+                            <i class="fa-solid fa-play" style="font-size: 2rem; color:var(--secondary-color); margin-bottom:10px;"></i>
+                            <p style="font-family:'Amiri'; font-size:1.5rem;">وَقُرْآنَ الْفَجْرِ ۖ إِنَّ قُرْآنَ الْفَجْرِ كَانَ مَشْهُودًا</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 3: Azkar & Hadith -->
+            <div class="landing-feature">
+                <div class="container feature-row reverse">
+                    <div class="feature-text">
+                        <span class="feature-icon"><i class="fa-solid fa-scroll"></i></span>
+                        <h3>الأذكار المأثورة وقطوف السُنّة</h3>
+                        <p>حصّن نفسك بأذكار الصباح والمساء المصنفة بعناية مع عدادات تفاعلية ذكية. واستلهم الحكمة من أحاديث النبي ﷺ المتجددة.</p>
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-check"></i> عداد ذكي لكل ذكر وتتبع الإنجاز</li>
+                            <li><i class="fa-solid fa-check"></i> تصنيفات (صباح، مساء، نوم، صلاة)</li>
+                            <li><i class="fa-solid fa-check"></i> أحاديث صحيحة متجددة (حديث اليوم)</li>
+                        </ul>
+                        <button onclick="navigateTo('azkar')" class="feature-link">ابدأ في قراءة الأذكار <i class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                    <div class="feature-visual box-shadowed" style="background:#fff; border-right:4px solid var(--secondary-color);">
+                        <h4 style="color:var(--primary-color); margin-bottom:15px; font-family:'Cairo';"><i class="fa-solid fa-quote-right"></i> حديث اليوم</h4>
+                        <div id="homeHadithContent" class="home-hadith-content">
+                            جاري التحميل...
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature 4: Asmaul Husna -->
+            <div class="landing-feature alternate-bg">
+                <div class="container feature-row">
+                    <div class="feature-text">
+                        <span class="feature-icon"><i class="fa-solid fa-star-and-crescent"></i></span>
+                        <h3>معرفة الله بأسمائه الحسنى</h3>
+                        <p>تأمل في أسماء الله الحسنى ومعانيها العميقة. نقدم لك يومياً اسماً من أسماء الله مع استعراض لمعناه وفضل الدعاء به لتتعمق صلتك بخالقك.</p>
+                        <button onclick="navigateTo('asma')" class="feature-link">استكشف أسماء الله <i class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                    <div class="feature-visual grid-cards" style="margin:0; gap:10px;">
+                        <!-- Quick Mini Cards for quick navigation to complete the design -->
+                        <div class="card" onclick="navigateTo('asma')" style="padding:20px;">
+                            <i class="fa-solid fa-star-and-crescent" style="font-size:2rem;"></i>
+                            <h3 style="font-size:1.1rem;">أسماء الله</h3>
+                        </div>
+                        <div class="card" onclick="navigateTo('fatawa')" style="padding:20px;">
+                            <i class="fa-solid fa-scale-balanced" style="font-size:2rem;"></i>
+                            <h3 style="font-size:1.1rem;">نافذة الفتاوى</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daily Story Card on Home -->
+            <div class="landing-feature">
+                <div class="container feature-row reverse">
+                    <div class="feature-text">
+                        <span class="feature-icon"><i class="fa-solid fa-book-open-reader"></i></span>
+                        <h3>قصة اليوم</h3>
+                        <div id="homeStoryContent" style="font-size:1.1rem; line-height:1.9; color:var(--text-color);">
+                            جاري التحميل...
+                        </div>
+                        <button onclick="navigateTo('stories')" class="feature-link" style="margin-top:15px;">المزيد من القصص <i class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                    <div class="feature-visual image-visual" style="background: linear-gradient(135deg, #046A38, #0B3D2E); min-height:250px;">
+                        <div class="visual-overlay-card" style="background:rgba(0,0,0,0.3); color:white;">
+                            <i class="fa-solid fa-mosque" style="font-size:3rem; color:#D4AF37; margin-bottom:15px;"></i>
+                            <p style="font-family:'Amiri'; font-size:1.3rem;">وَكُلًّا نَقُصُّ عَلَيْكَ مِنْ أَنبَاءِ الرُّسُلِ مَا نُثَبِّتُ بِهِ فُؤَادَكَ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action Footer -->
+            <div class="landing-cta section-title" style="margin-top:0; padding:60px 20px; background:var(--primary-color); color:white;">
+                <h2 style="color:white; font-size:2rem; margin-bottom:20px;">ابدأ رحلتك الإيمانية مع قطايف الآن</h2>
+                <p style="color:rgba(255,255,255,0.8); font-size:1.2rem; margin-bottom:30px; max-width:600px; margin-left:auto; margin-right:auto;">لا تتردد في تصفح أقسام الموقع وقراءة الورد اليومي والتعرف على المواقيت بدقة.</p>
+                <button onclick="navigateTo('quran')" class="btn secondary-btn btn-large" style="font-size:1.2rem; padding:15px 40px; border-radius:30px; box-shadow:0 10px 20px rgba(0,0,0,0.2);">تصفح الموقع بالكامل</button>
+            </div>
+        </section>
+
+        <!-- Quran Section -->
+        <section id="quran" class="page-section">
+            <div class="container">
+                <h2 class="section-title">القرآن الكريم</h2>
+                
+                <div class="quran-audio-header" id="quranAudioHeader" style="display: none; justify-content: space-between; align-items: center; margin-bottom: 20px; background: var(--card-bg); padding: 15px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); gap: 15px; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 10px; width: auto; flex-grow: 1;">
+                        <label for="reciterSelect" style="font-weight: bold; color: var(--primary-color); white-space: nowrap;"><i class="fa-solid fa-microphone"></i> القارئ:</label>
+                        <select id="reciterSelect" class="search-input" style="margin-bottom: 0; min-width: 200px; font-family: 'Cairo';">
+                            <option value="ar.alafasy">مشاري العفاسي</option>
+                            <option value="ar.abdulbasitmurattal">عبد الباسط عبد الصمد</option>
+                            <option value="ar.mahermuaiqly">ماهر المعيقلي</option>
+                            <option value="ar.minshawi">محمد صديق المنشاوي</option>
+                            <option value="ar.sudais">عبد الرحمن السديس</option>
+                            <option value="ar.husary">محمود خليل الحصري</option>
+                        </select>
+                    </div>
+                    <audio id="quranAudioPlayer" controls style="flex-grow: 2; height: 40px;"></audio>
+                </div>
+
+                <div class="quran-container">
+                    <div class="surah-list-wrapper">
+                        <input type="text" id="surahSearch" placeholder="ابحث عن سورة..." class="search-input">
+                        <ul id="surahList" class="surah-list"></ul>
+                    </div>
+                    <div class="surah-content" id="surahContent">
+                        <div class="placeholder-text">اختر سورة لقراءتها</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prayer Times Section -->
+        <section id="prayer" class="page-section">
+            <div class="container">
+                <h2 class="section-title">مواقيت الصلاة وتحديد القبلة</h2>
+                <div class="prayer-controls">
+                    <button id="getLocationBtn" class="btn primary-btn"><i class="fa-solid fa-location-dot"></i> استخدم موقعي الحالي للحصول على المواقيت والقبلة</button>
+                    <p id="locationStatus" class="status-msg"></p>
+                </div>
+                <div class="prayer-times-grid" id="prayerGrid">
+                    <!-- Times injected via JS -->
+                </div>
+
+                <!-- Qibla Section -->
+                <div class="qibla-container" id="qiblaContainer" style="display: none; text-align: center; margin-top: 50px;">
+                    <h3 style="color: var(--primary-color); font-size: 1.8rem; margin-bottom: 20px;"><i class="fa-solid fa-kaaba"></i> اتجاه القبلة</h3>
+                    <p id="qiblaText" style="margin-bottom: 20px; font-size: 1.2rem;"></p>
+                    
+                    <div class="qibla-compass">
+                        <div class="compass-north">N</div>
+                        <div class="compass-east">E</div>
+                        <div class="compass-west">W</div>
+                        <div class="compass-south">S</div>
+                        <div class="compass-center"></div>
+                        <div class="qibla-dial" id="qiblaDial">
+                            <div class="qibla-arrow">
+                                <i class="fa-solid fa-kaaba"></i>
+                                <div class="qibla-line"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 20px; color: #666; font-size: 1rem;"><i class="fa-solid fa-circle-info"></i> ضع الهاتف بشكل مسطح ووجّه حرف <strong>N</strong> نحو الشمال الحقيقي ليكشف السهم عن اتجاه القبلة بدقة.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Azkar Section -->
+        <section id="azkar" class="page-section">
+            <div class="container">
+                <h2 class="section-title">الأذكار</h2>
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="morning">الصباح</button>
+                    <button class="tab-btn" data-tab="evening">المساء</button>
+                    <button class="tab-btn" data-tab="prayer">الصلاة</button>
+                    <button class="tab-btn" data-tab="after_prayer">بعد الصلاة</button>
+                    <button class="tab-btn" data-tab="sleep">النوم</button>
+                    <button class="tab-btn" data-tab="wake">الاستيقاظ</button>
+                </div>
+                <div id="azkarContent" class="azkar-list">
+                    <!-- Injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <section id="asma" class="page-section">
+            <div class="container">
+                <h2 class="section-title">أسماء الله الحسنى</h2>
+                <div class="name-of-day-card" id="nameOfDayCard"></div>
+                
+                <!-- New Full Grid Section -->
+                <div class="names-full-list" id="namesFullList" style="margin-top: 50px;">
+                    <!-- Categories and Names injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <section id="hadith" class="page-section">
+            <div class="container">
+                <h2 class="section-title">الأحاديث والأدعية</h2>
+                <p class="subtitle" style="text-align:center; margin-bottom:20px;">قطوف مصنفة من صحيح البخاري ومسلم والمصادر الموثوقة</p>
+                <div style="max-width:600px; margin:0 auto 30px; position:relative;">
+                    <i class="fa-solid fa-search" style="position:absolute; right:15px; top:16px; color:var(--primary-color);"></i>
+                    <input type="text" id="hadithSearchInput" placeholder="ابحث في جميع الأحاديث..." style="width:100%; padding:12px 40px 12px 15px; border:2px solid var(--border-color); border-radius:8px; font-size:1.1rem; background:var(--card-bg); color:var(--text-color); font-family:'Cairo'; outline:none;">
+                </div>
+                <div class="tabs" id="hadithTabs" style="display:flex; justify-content:center; flex-wrap:wrap; margin-bottom:30px;">
+                    <button class="tab-btn active" data-tab="أحاديث الأخلاق">الأخلاق</button>
+                    <button class="tab-btn" data-tab="العبادات">العبادات</button>
+                    <button class="tab-btn" data-tab="فضل الذكر">فضل الذكر</button>
+                    <button class="tab-btn" data-tab="العلم">العلم</button>
+                </div>
+                <div id="hadithContentList" class="grid-cards"></div>
+            </div>
+        </section>
+
+        <section id="fatawa" class="page-section">
+            <div class="container">
+                <h2 class="section-title">الفتاوى</h2>
+                <div class="fatawa-list" id="fatawaContent"></div>
+            </div>
+        </section>
+
+        <section id="tasbeeh" class="page-section">
+            <div class="container" style="text-align:center;">
+                <h2 class="section-title">السُبحة الإلكترونية</h2>
+                <p class="subtitle" style="margin-bottom:20px;">اختر ذكراً واضغط على الدائرة للتسبيح</p>
+                <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-bottom:20px;">
+                    <button class="tab-btn active" onclick="setTasbeehText(this,'سبحان الله')">سبحان الله</button>
+                    <button class="tab-btn" onclick="setTasbeehText(this,'الحمد لله')">الحمد لله</button>
+                    <button class="tab-btn" onclick="setTasbeehText(this,'الله أكبر')">الله أكبر</button>
+                    <button class="tab-btn" onclick="setTasbeehText(this,'لا إله إلا الله')">لا إله إلا الله</button>
+                    <button class="tab-btn" onclick="setTasbeehText(this,'أستغفر الله')">أستغفر الله</button>
+                    <button class="tab-btn" onclick="setTasbeehText(this,'اللهم صلِ على محمد')">اللهم صلِ على محمد</button>
+                    <button class="tab-btn" onclick="setTasbeehText(this,'لا حول ولا قوة إلا بالله')">لا حول ولا قوة إلا بالله</button>
+                </div>
+                <!-- Fadl Card -->
+                <div id="tasbeehFadl" class="tasbeeh-fadl-container">
+                    <i class="fa-solid fa-star"></i> <span>كلمتان خفيفتان على اللسان، ثقيلتان في الميزان...</span>
+                </div>
+                <div class="tasbeeh-circle" id="tasbeehCircle" onclick="incrementTasbeeh()">
+                    <span class="tasbeeh-count" id="tasbeehCount">0</span>
+                    <span class="tasbeeh-label" id="tasbeehLabel">سبحان الله</span>
+                </div>
+                <div style="margin-top:25px;"><button class="btn secondary-btn" onclick="resetTasbeeh()"><i class="fa-solid fa-rotate-right"></i> إعادة العداد</button></div>
+                <p style="margin-top:20px; color:#888;" id="tasbeehTotal">الإجمالي اليومي: 0 تسبيحة</p>
+            </div>
+        </section>
+
+        <section id="stories" class="page-section">
+            <div class="container">
+                <h2 class="section-title">قصص إسلامية</h2>
+                <p class="subtitle" style="text-align:center; margin-bottom:30px;">من السيرة النبوية وقصص الأنبياء والصحابة</p>
+                <div id="storiesContent" class="grid-cards"></div>
+            </div>
+        </section>
+
+        <section id="dashboard" class="page-section">
+            <div class="container">
+                <h2 class="section-title">لوحة إنجازاتي</h2>
+                <p class="subtitle" style="text-align:center; margin-bottom:30px;">تتبع تقدمك الروحاني اليومي</p>
+                <div class="dashboard-grid" id="dashboardContent">
+                    <div class="card box-shadowed dash-card"><i class="fa-solid fa-fire" style="font-size:2.5rem; color:#D4AF37;"></i><h3 id="streakCount">0</h3><p>أيام متتالية</p></div>
+                    <div class="card box-shadowed dash-card"><i class="fa-solid fa-hands-praying" style="font-size:2.5rem; color:var(--primary-color);"></i><h3 id="totalTasbeehStat">0</h3><p>إجمالي التسبيحات</p></div>
+                    <div class="card box-shadowed dash-card"><i class="fa-solid fa-heart" style="font-size:2.5rem; color:var(--secondary-color);"></i><h3 id="likedHadithsStat">0</h3><p>أحاديث معجب بها</p></div>
+                    <div class="card box-shadowed dash-card"><i class="fa-solid fa-circle-check" style="font-size:2.5rem; color:#28a745;"></i><h3 id="quizCorrectStat">0</h3><p>إجابات صحيحة</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer><div class="container"><p>تم التطوير بواسطة محمد عبد الغفار | موقع قطايف الإسلامي &copy; 2026</p></div></footer>
+
+    <nav class="bottom-nav" id="bottomNav">
+        <a href="#home" data-target="home" class="bottom-nav-item active" onclick="navigateTo('home')"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
+        <a href="#quran" data-target="quran" class="bottom-nav-item" onclick="navigateTo('quran')"><i class="fa-solid fa-book-quran"></i><span>القرآن</span></a>
+        <a href="#prayer" data-target="prayer" class="bottom-nav-item" onclick="navigateTo('prayer')"><i class="fa-solid fa-clock"></i><span>المواقيت</span></a>
+        <a href="#azkar" data-target="azkar" class="bottom-nav-item" onclick="navigateTo('azkar')"><i class="fa-solid fa-hands-praying"></i><span>الأذكار</span></a>
+        <a href="#tasbeeh" data-target="tasbeeh" class="bottom-nav-item" onclick="navigateTo('tasbeeh')"><i class="fa-solid fa-circle-dot"></i><span>السُبحة</span></a>
+    </nav>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeLoginModal">&times;</span>
+            <h2 style="color:var(--primary-color); margin-bottom:20px; text-align:center;"><i class="fa-solid fa-user-lock"></i> تسجيل الدخول</h2>
+            <form id="loginForm">
+                <div class="input-group"><input type="email" placeholder="البريد الإلكتروني" required></div>
+                <div class="input-group"><input type="password" placeholder="كلمة المرور" required></div>
+                <button type="submit" class="btn primary-btn btn-large" style="width:100%; margin-top:10px;">دخول</button>
+            </form>
+            <div class="social-login-divider"><span>أو الدخول السريع عبر</span></div>
+            <div class="social-login-group">
+                <button type="button" class="social-btn google-btn" onclick="simulateSocialLogin('جوجل')"><i class="fa-brands fa-google"></i> جوجل</button>
+                <button type="button" class="social-btn facebook-btn" onclick="simulateSocialLogin('فيسبوك')"><i class="fa-brands fa-facebook-f"></i> فيسبوك</button>
+                <button type="button" class="social-btn microsoft-btn" onclick="simulateSocialLogin('مايكروسوفت')"><i class="fa-brands fa-windows"></i> مايكروسوفت</button>
+            </div>
+            <p style="margin-top:15px; text-align:center; font-size:0.9rem;">ليس لديك حساب؟ <a href="#" style="color:var(--secondary-color);">أنشئ حساباً جديداً</a></p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="assets/js/names-data.js"></script>
+    <script src="assets/js/hadith-data.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(e){console.log('SW:',e);});}</script>
+</body>
+</html>
