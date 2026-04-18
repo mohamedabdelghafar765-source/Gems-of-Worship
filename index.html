@@ -9,20 +9,109 @@
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="assets/img/icon-192.png">
-    <!-- Google Fonts -->
+    <!-- Google Fonts & Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.alquran.cloud">
+    <link rel="preconnect" href="https://api.aladhan.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- SEO & Social Sharing -->
+    <meta name="keywords" content="قطايف, إسلامي, مواقيت الصلاة, القرآن الكريم, أذكار, أحاديث, فتاوى, سيرة نبوية, أسماء الله الحسنى, قبلة">
+    <meta name="author" content="محمد عبد الغفار">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mohamedabdelghafar765-source.github.io/Gems-of-Worship/">
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="قطايف | دليلك للتقرب إلى الله">
-    <meta property="og:description" content="تطبيق إسلامي متكامل: مواقيت صلاة، قرآن، أذكار، وقصص يومية.">
-    <meta property="og:image" content="assets/img/icon-512.png">
+    <meta property="og:url" content="https://mohamedabdelghafar765-source.github.io/Gems-of-Worship/">
+    <meta property="og:title" content="قطايف | دليلك الإسلامي الشامل للتقرب إلى الله">
+    <meta property="og:description" content="تطبيق إسلامي متكامل يرافقك في يومك: مواقيت صلاة دقيقة، تلاوات خاشعة، أذكار حصن المسلم، وأسماء الله الحسنى مع شرحها.">
+    <meta property="og:image" content="https://mohamedabdelghafar765-source.github.io/Gems-of-Worship/assets/img/icon-512.png">
+    <meta property="og:site_name" content="قطايف">
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mohamedabdelghafar765-source.github.io/Gems-of-Worship/">
+    <meta name="twitter:title" content="قطايف | دليلك الإسلامي الشامل للتقرب إلى الله">
+    <meta name="twitter:description" content="تطبيق إسلامي متكامل يرافقك في يومك: مواقيت صلاة دقيقة، تلاوات خاشعة، أذكار حصن المسلم، وأسماء الله الحسنى مع شرحها.">
+    <meta name="twitter:image" content="https://mohamedabdelghafar765-source.github.io/Gems-of-Worship/assets/img/icon-512.png">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "قطايف",
+      "url": "https://mohamedabdelghafar765-source.github.io/Gems-of-Worship/",
+      "description": "قطايف - دليلك الإسلامي الشامل. مواقيت الصلاة، القرآن الكريم، الأذكار، الأحاديث والفتاوى",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://mohamedabdelghafar765-source.github.io/Gems-of-Worship/#quran?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "قطايف",
+      "url": "https://mohamedabdelghafar765-source.github.io/Gems-of-Worship/",
+      "logo": "https://mohamedabdelghafar765-source.github.io/Gems-of-Worship/assets/img/icon-512.png",
+      "sameAs": [
+        "https://facebook.com/qataifapp",
+        "https://twitter.com/qataifapp"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "الرئيسية",
+        "item": "https://mohamedabdelghafar765-source.github.io/Gems-of-Worship/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "القرآن الكريم",
+        "item": "https://mohamedabdelghafar765-source.github.io/Gems-of-Worship/#quran"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "مواقيت الصلاة",
+        "item": "https://mohamedabdelghafar765-source.github.io/Gems-of-Worship/#prayer"
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "كيف أحصل على مواقيت الصلاة الدقيقة؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "يقوم تطبيق قطايف بتحديد موقعك الجغرافي تلقائياً لتقديم مواقيت الصلاة بدقة متناهية بناءً على إحداثياتك الحالية."
+        }
+      }, {
+        "@type": "Question",
+        "name": "هل يوفر الموقع تلاوات صوتية للقرآن؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم، يوفر قسم القرآن الكريم في قطايف تلاوات لأشهر القراء مثل مشاري العفاسي وعبد الباسط عبد الصمد مع خاصية تظليل الآيات."
+        }
+      }]
+    }
+    </script>
 </head>
 <body>
 
@@ -52,17 +141,17 @@
     <!-- Header Navigation -->
     <header class="navbar">
         <div class="container nav-content">
-            <h1 class="logo"><i class="fa-solid fa-moon"></i> قطايف</h1>
+            <div class="logo"><i class="fa-solid fa-moon"></i> قطايف</div>
             
             <div class="nav-right-side">
                 <div class="nav-extra-controls">
-                    <button id="btnDecreaseFont" class="icon-btn tool-tip" title="تصغير الخط">A-</button>
-                    <button id="btnIncreaseFont" class="icon-btn tool-tip" title="تكبير الخط">A+</button>
-                    <button id="btnThemeToggle" class="icon-btn tool-tip" title="الوضع الداكن"><i class="fa-solid fa-moon"></i></button>
+                    <button id="btnDecreaseFont" class="icon-btn tool-tip" title="تصغير الخط" aria-label="تصغير حجم الخط">A-</button>
+                    <button id="btnIncreaseFont" class="icon-btn tool-tip" title="تكبير الخط" aria-label="تكبير حجم الخط">A+</button>
+                    <button id="btnThemeToggle" class="icon-btn tool-tip" title="الوضع الداكن" aria-label="تبديل الوضع الداكن"><i class="fa-solid fa-moon"></i></button>
                     <button id="btnLogin" class="btn secondary-btn login-btn-header"><i class="fa-solid fa-user"></i> دخول</button>
                 </div>
                 
-                <button class="menu-toggle" id="menuToggle">
+                <button class="menu-toggle" id="menuToggle" aria-label="فتح قائمة التنقل">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
@@ -87,7 +176,7 @@
                 <div class="container hero-content">
                     <div class="hero-text">
                         <span class="badge">روحانية متكاملة</span>
-                        <h2>دليل المسلم الشامل<br>في مكان واحد</h2>
+                        <h1 style="font-size: 2.5rem; margin-bottom: 20px;">دليل المسلم الشامل<br>في مكان واحد</h1>
                         <p>موقع قطايف يوفر لك تجربة إيمانية متكاملة صُممت خصيصاً لترافقك في يومك. تلاوات خاشعة، مواقيت دقيقة، أذكار ميسرة، ومكتبة إسلامية غنية بين يديك.</p>
                         <div class="hero-actions">
                             <button onclick="navigateTo('quran')" class="btn primary-btn btn-large"><i class="fa-solid fa-book-open"></i> اقرأ واستمع للقرآن</button>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mohamedabdelghafar765-source.github.io/Gems-of-Worship/sitemap.xml
